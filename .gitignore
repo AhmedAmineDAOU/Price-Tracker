@@ -1,0 +1,35 @@
+# Environnements virtuels
+/venv
+
+# Fichier/ dossiers intellij
+.idea/
+*.iml
+
+
+# Fichiers compilés Python
+__pycache__/
+*.py[cod]
+
+# Logs et fichiers temporaires
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Fichiers de configuration système
+.DS_Store
+Thumbs.db
+
+# Fichiers de tests générés
+.coverage
+nosetests.xml
+test-reports/
+
+# Fichiers liés à la gestion des dépendances
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Fichiers de packaging
+*.egg-info/
+dist/
+build/
