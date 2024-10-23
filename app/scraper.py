@@ -37,7 +37,9 @@ class Scraper:
         # Récupérer le prix du produit en cherchant l'élément par classe
         try:
             price_element = driver.find_element(By.CLASS_NAME, "f-faPriceBox__price")
-            price = price_element.text.strip()
+            price_str = price_element.text.replace('€', '').strip()
+            price_str = price_str.replace(',', '.')
+            price = float(price_str)
             print(f"Le prix du produit est : {price}")
         except Exception as e:
             print(f"Erreur lors de la récupération du prix : {e}")

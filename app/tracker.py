@@ -17,8 +17,8 @@ class PriceTracker:
         # Comparer et traiter le changement de prix
         old_price = get_last_price(product['id'])
         if new_price != old_price:
-            self.notify_price_change(product, new_price, old_price)
             add_price(product['id'], new_price)
+            self.notify_price_change(product, new_price, old_price)
             return {
                 'scraper': scraper,
                 'product': product,

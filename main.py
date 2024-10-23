@@ -1,10 +1,10 @@
 from app.tracker import PriceTracker
-from app.db import load_products, drop_create_database
+from app.db import load_products, drop_create_database_dev
 
 
 def main():
 
-    drop_create_database()
+    drop_create_database_dev()
 
     # Charger tous les produits à surveiller depuis la base de données
     products = load_products()
@@ -17,9 +17,6 @@ def main():
         result = tracker.check_price_change(product)
         if result:
             products_with_price_change.append(result)
-
-    # TODO: Tester avec 3 produit dont 1 n'ayant pas de prix changé
-
 
 if __name__ == "__main__":
     main()

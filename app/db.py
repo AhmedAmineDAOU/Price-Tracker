@@ -1,7 +1,7 @@
 import sqlite3
 
 
-def drop_create_database():
+def drop_create_database_dev():
     conn = sqlite3.connect('price_tracker.db')
     cursor = conn.cursor()
     # Supprimer les tables si elles existent déjà (pour réinitialiser la base de données)
@@ -26,14 +26,31 @@ def drop_create_database():
             FOREIGN KEY(product_id) REFERENCES products(id)
         )
     ''')
-    product = {
+    product1 = {
         "name": "Sac à dos Herschel",
-        "url": "https://www.fnac.com/Sac-a-dos-Herschel-Gris-et-Noir/a18822103/w-4"
+        "url": "C:/Users/DAOU/projects/price-tracker/tests/web_pages/Sac à dos Herschel Gris et Noir - Sac à dos - Achat & prix _ fnac.html"
     }
-    product_id = add_product(product['name'],
-                         product['url'])
-    add_price(product_id=product_id, price=120.0)
+    product1_id = add_product(product1['name'],
+                              product1['url'])
+    add_price(product_id=product1_id, price=120.0)
 
+    product2 = {
+        "name": "Sac-a-dos-Herschel-Weather-Resistant-Roll-Top-Noir",
+        "url": "C:/Users/DAOU/projects/price-tracker/tests/web_pages/Sac à dos Herschel Vert et Marron - Sac à dos - Achat & prix _ fnac.html"
+    }
+
+    product2_id = add_product(product2['name'],
+                              product2['url'])
+    add_price(product_id=product2_id, price=120.0)
+
+    product3 = {
+        "name": "Sac-a-dos-Herschel-Vert-et-Marron",
+        "url": "C:/Users/DAOU/projects/price-tracker/tests/web_pages/Sac à dos Herschel Weather Resistant Roll Top Noir - Sac à dos - Achat & prix _ fnac.html"
+    }
+    product3_id = add_product(product3['name'],
+                              product3['url'])
+
+    add_price(product_id=product3_id, price=114.99)
     conn.commit()
     conn.close()
 
