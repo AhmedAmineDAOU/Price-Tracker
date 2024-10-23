@@ -110,5 +110,4 @@ def load_products():
             'name': row[1],
             'url': row[2]
         })
-
     return products

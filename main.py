@@ -11,12 +11,14 @@ def main():
 
     # Initialiser le tracker de prix
     tracker = PriceTracker()
-
+    products_with_price_change = []
     # Vérifier chaque produit
     for product in products:
-        tracker.check_price_change(product)
+        result = tracker.check_price_change(product)
+        if result:
+            products_with_price_change.append(result)
 
-    # TODO: recuperer tous les produits ayant eu un changement de prix
+    # TODO: Tester avec 3 produit dont 1 n'ayant pas de prix changé
 
 
 if __name__ == "__main__":
